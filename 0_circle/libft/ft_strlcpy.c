@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 20:31:53 by seongyle          #+#    #+#             */
-/*   Updated: 2022/04/04 21:24:48 by seongyle         ###   ########.fr       */
+/*   Updated: 2022/04/12 22:06:43 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 size_t				ft_strlen(const char *s);
 
-size_t	ft_strlcpy(char *restrict dst,
-		const char *restrict src,
-		size_t dst_size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 {
 	size_t	i;
 
