@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 19:51:20 by seongyle          #+#    #+#             */
-/*   Updated: 2022/05/04 19:13:41 by seongyle         ###   ########.fr       */
+/*   Created: 2022/03/14 18:49:27 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/04 21:26:11 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
-size_t	ft_strlen(const char *str);
+size_t				ft_strlen(const char *s);
 
-char	*ft_strdup(const char *s1)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*new_str;
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!new_str)
-		return (NULL);
-	while (s1[i])
+	len = ft_strlen(s) + 1;
+	while (*s)
+		s++;
+	while (len--)
 	{
-		new_str[i] = s1[i];
-		i++;
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		s--;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	return (NULL);
 }

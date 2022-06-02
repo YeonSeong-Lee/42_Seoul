@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 19:51:20 by seongyle          #+#    #+#             */
-/*   Updated: 2022/05/04 19:13:41 by seongyle         ###   ########.fr       */
+/*   Created: 2022/04/01 20:03:04 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/04 16:43:03 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str);
-
-char	*ft_strdup(const char *s1)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*new_str;
-	size_t	i;
+	t_list	*last_node;
 
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!new_str)
-		return (NULL);
-	while (s1[i])
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
 	{
-		new_str[i] = s1[i];
-		i++;
+		*lst = new;
+		return ;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	last_node = ft_lstlast(*lst);
+	last_node -> next = new;
 }

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 19:51:20 by seongyle          #+#    #+#             */
-/*   Updated: 2022/05/04 19:13:41 by seongyle         ###   ########.fr       */
+/*   Created: 2022/03/30 17:35:02 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/01 13:06:11 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
 
-size_t	ft_strlen(const char *str);
-
-char	*ft_strdup(const char *s1)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*new_str;
-	size_t	i;
-
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!new_str)
-		return (NULL);
-	while (s1[i])
+	if (n == -2147483648)
 	{
-		new_str[i] = s1[i];
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }

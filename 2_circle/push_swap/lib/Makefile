@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+         #
+#    By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 14:44:18 by seongyle          #+#    #+#              #
-#    Updated: 2022/05/13 20:51:04 by seongyle         ###   ########.fr        #
+#    Updated: 2022/05/09 17:19:49 by seongyle         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,5 +87,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: 
-	make fclean
+	make fclean 
 	make all
