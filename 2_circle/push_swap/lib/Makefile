@@ -6,7 +6,7 @@
 #    By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 14:44:18 by seongyle          #+#    #+#              #
-#    Updated: 2022/05/09 17:19:49 by seongyle         ###   ########seoul.kr   #
+#    Updated: 2022/06/02 12:09:22 by seongyle         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRC =  ft_bzero.c \
 	  ft_putendl_fd.c\
 	  ft_putnbr_fd.c\
 	  ft_striteri.c\
+	  ft_atoll.c\
 
 BONUS_SRC =  ft_lstnew.c\
 	  ft_lstadd_front.c\

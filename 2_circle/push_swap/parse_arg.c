@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:17 by seongyle          #+#    #+#             */
-/*   Updated: 2022/05/31 18:03:01 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/02 12:02:40 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int digit_checker(char *str)
 {
+    if (*str == '+' || *str == '-')
+        str++;
     while (*str)
     {
         if (!ft_isdigit(*str))
@@ -21,6 +23,11 @@ static int digit_checker(char *str)
         str++;
     }
     return (1);
+}
+
+static int int_cheker(char *str)
+{
+    
 }
 
 int arg_validator(char *str)
