@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.c                                        :+:      :+:    :+:   */
+/*   stack_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 14:04:17 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/02 12:02:40 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/02 17:21:25 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/02 22:05:27 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h> // must delted
 #include "push_swap.h"
 
-static int digit_checker(char *str)
+static void extend_stacl(t_stack *ptr_stack)
 {
-    if (*str == '+' || *str == '-')
-        str++;
-    while (*str)
-    {
-        if (!ft_isdigit(*str))
-            return (0);
-        str++;
-    }
-    return (1);
+	// memcpy로 기존 스택 복사
 }
 
-static int int_cheker(char *str)
+void	init_stack(t_stack *ptr_stack)
 {
-    
+	ptr_stack->capacity = 100;
+	ptr_stack->size = 0;
+	ptr_stack->arr = (int *)malloc(sizeof(int) * ptr_stack->capacity);
 }
 
-int arg_validator(char *str)
+void    push(t_stack *ptr_stack, int data)
 {
-    if (!digit_checker(str))
-        return (0);
-    return (1);
+	if (ptr_stack->capacity == ptr_stack->size)
+	{
+		//extend_stack
+	}
+	(ptr_stack->arr)[ptr_stack->size] = data;
+	ptr_stack->size++;
 }
