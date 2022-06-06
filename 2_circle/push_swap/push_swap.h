@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/04 21:49:39 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/06 12:50:42 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	insert_stack(t_stack *stack_a, int data);
 void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b);
 t_node	*new_node(int data);
 t_node *last_node(t_stack *stack);
+void	push(t_stack *stack, t_node *node);
+t_node	*pop(t_stack *stack);
 
 
 
