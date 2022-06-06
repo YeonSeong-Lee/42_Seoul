@@ -6,10 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/06 12:55:33 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/06 14:53:08 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "push_swap.h"
 
 int	main(int argc, char **argv)
@@ -20,6 +21,5 @@ int	main(int argc, char **argv)
 	arg_validator(argc, argv);
 	init_stacks(&stack_a, &stack_b);
 	arg_parser(argc, argv, &stack_a, &stack_b);
-	push(&stack_a, new_node(100));
 	//이제 여기서 마법처럼 잘 정렬해주면 됨//
 }

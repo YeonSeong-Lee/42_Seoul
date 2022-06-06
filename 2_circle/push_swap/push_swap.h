@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/06 12:50:42 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/06 13:56:14 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_node	*new_node(int data);
 t_node *last_node(t_stack *stack);
 void	push(t_stack *stack, t_node *node);
 t_node	*pop(t_stack *stack);
+void	swap_a(t_stack *t_stack);
 
 
 
