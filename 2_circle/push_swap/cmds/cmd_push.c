@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cmd_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/07 21:07:40 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/06 17:52:47 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/07 12:27:01 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	push_a(t_stack *stack_a, t_stack *stack_b, int is_print)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_node	*temp;
 
-	arg_validator(argc, argv);
-	init_stacks(&stack_a, &stack_b);
-	arg_parser(argc, argv, &stack_a, &stack_b);
-	//이제 여기서 마법처럼 잘 정렬해주면 됨//
-	rotate_reverse_a(&stack_a, 1);
+	if (stack_b->size == 0)
+		return ;
+	temp = pop(stack_b);
+	push(stack_a, temp);
+	if (is_print)
+		write(1, "pa\n", 3);
+}
 
-	
+void	push_b(t_stack *stack_b, t_stack *stack_a, int is_print)
+{
+	t_node	*temp;
+
+	if (stack_a->size == 0)
+		return ;
+	temp = pop(stack_a);
+	push(stack_b, temp);
+	if (is_print)
+		write(1, "pb\n", 3);
 }

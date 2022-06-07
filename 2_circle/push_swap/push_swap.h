@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/06 17:49:18 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/07 21:42:47 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,13 @@ t_node	*pop(t_stack *stack);
 void	swap_a(t_stack *stack_a, int is_print);
 void	swap_b(t_stack *stack_b, int is_print);
 void	swap_both(t_stack *stack_a, t_stack *stack_b);
-
-
+void	push_a(t_stack *stack_a, t_stack *stack_b, int is_print);
+void	push_b(t_stack *stack_b, t_stack *stack_a, int is_print);
+void	rotate_a(t_stack *stack_a, int is_print);
+void	rotate_b(t_stack *stack_b, int is_print);
+void	rotate_both(t_stack *stack_a, t_stack *stack_b);
+void	rotate_reverse_a(t_stack *stack_a, int is_print);
+void	rotate_reverse_b(t_stack *stack_b, int is_print)
+void	rotate_reverse_both(t_stack *stack_a, t_stack *stack_b)
 
 #endif
