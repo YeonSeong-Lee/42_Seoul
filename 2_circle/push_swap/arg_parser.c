@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:20:44 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/04 21:31:01 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/07 21:45:16 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
-	int     i;
-	char    **splited;
-	int     each_arg;
+	int		i;
+	char	**splited;
+	int		each_arg;
 
 	i = 0;
 	while (i < argc)

@@ -6,13 +6,13 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 17:57:32 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/04 14:42:01 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/07 21:45:48 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-void    error_exit(void)
+void	error_exit(void)
 {
 	write(2, "error\n", 6);
 	exit(EXIT_FAILURE);
