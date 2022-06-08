@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/07 21:47:33 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 12:17:55 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int	main(int argc, char **argv)
 	arg_validator(argc, argv);
 	init_stacks(&stack_a, &stack_b);
 	arg_parser(argc, argv, &stack_a, &stack_b);
+	arg_indexer(&stack_a);
 }

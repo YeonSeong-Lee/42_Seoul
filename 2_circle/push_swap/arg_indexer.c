@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   arg_indexer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 21:48:13 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 12:32:50 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/08 12:27:06 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 15:51:02 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *new_node(int data)
+void	arg_indexer(t_stack *stack_a)
 {
-	t_node	*new_node;
+	t_node	*temp;
+	t_node	*temp_2;
 
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (!new_node)
-		error_exit();
-	new_node->value = data;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	new_node->index = 0;
-	return (new_node);
-}
-
-t_node *last_node(t_stack *stack)
-{
-	t_node	*node;
-
-	node = stack->top;	
-	while (node->next != NULL)
-		node = node->next;
-	return (node);
+	temp = stack_a->top;
+	while (temp)
+	{
+		temp_2 = stack_a->top;
+		while (temp_2)
+		{
+			if (temp->value > temp_2->value)
+				temp->index++;
+			temp_2 = temp_2->next;
+		}
+		temp = temp->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/07 21:55:22 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 15:43:52 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_node
 {
 	int				value;
+	size_t			index;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -37,6 +38,7 @@ void	error_exit(void);
 void	init_stacks(t_stack *stack_a, t_stack *stack_b);
 void	insert_stack(t_stack *stack_a, int data);
 void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b);
+void	arg_indexer(t_stack *stack_a);
 t_node	*new_node(int data);
 t_node	*last_node(t_stack *stack);
 void	push(t_stack *stack, t_node *node);
