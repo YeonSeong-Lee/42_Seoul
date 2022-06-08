@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 20:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 16:25:55 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 19:17:22 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rotate_reverse_a(t_stack *stack_a, int is_print)
 	stack_a->bottom = temp_bottom_prev;
 	stack_a->bottom->next = NULL;
 	if (is_print)
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 }
 
 void	rotate_reverse_b(t_stack *stack_b, int is_print)
@@ -45,7 +45,7 @@ void	rotate_reverse_b(t_stack *stack_b, int is_print)
 	stack_b->bottom = temp_bottom_prev;
 	stack_b->bottom->next = NULL;
 	if (is_print)
-		write(1, "rrb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
 void	rotate_reverse_both(t_stack *stack_a, t_stack *stack_b)
@@ -54,5 +54,5 @@ void	rotate_reverse_both(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	rotate_reverse_a(stack_a, 0);
 	rotate_reverse_b(stack_b, 0);
-	write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }
