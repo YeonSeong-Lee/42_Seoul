@@ -6,11 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:17 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/04 15:03:23 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 16:24:43 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static	int	digit_checker(char *str)
 {

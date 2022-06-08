@@ -6,11 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:21:25 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/06 13:57:49 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 16:25:06 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	init_stacks(t_stack *stack_a, t_stack *stack_b)
 {

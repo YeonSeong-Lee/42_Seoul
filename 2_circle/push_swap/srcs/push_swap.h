@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 15:43:52 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 16:21:51 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define MAX_ARGS_SIZE 500
 
 # include <unistd.h>
-# include "./lib/libft.h"
+# include "../lib/libft.h"
 
 typedef struct s_node
 {
@@ -54,5 +54,6 @@ void	rotate_both(t_stack *stack_a, t_stack *stack_b);
 void	rotate_reverse_a(t_stack *stack_a, int is_print);
 void	rotate_reverse_b(t_stack *stack_b, int is_print);
 void	rotate_reverse_both(t_stack *stack_a, t_stack *stack_b);
+void	arrange_2_args(t_stack *stack_a);
 
 #endif

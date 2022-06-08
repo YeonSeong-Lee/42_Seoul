@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_indexer.c                                      :+:      :+:    :+:   */
+/*   arg_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 12:27:06 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 15:51:02 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/02 19:20:44 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 16:24:38 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	arg_indexer(t_stack *stack_a)
+void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
-	t_node	*temp;
-	t_node	*temp_2;
+	int		i;
+	char	**splited;
+	int		each_arg;
 
-	temp = stack_a->top;
-	while (temp)
+	i = 0;
+	while (i < argc)
 	{
-		temp_2 = stack_a->top;
-		while (temp_2)
+		if (i >= 1)
 		{
-			if (temp->value > temp_2->value)
-				temp->index++;
-			temp_2 = temp_2->next;
+			splited = ft_split(argv[i], ' ');
+			while (*splited)
+			{
+				each_arg = ft_atoi(*splited);
+				insert_stack(stack_a, each_arg);
+				splited++;
+			}
 		}
-		temp = temp->next;
+		i++;
 	}
+	stack_b->size = stack_a->size;
 }

@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_parser.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 19:20:44 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/07 21:45:16 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/04 21:48:13 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 16:25:13 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
+t_node *new_node(int data)
 {
-	int		i;
-	char	**splited;
-	int		each_arg;
+	t_node	*new_node;
 
-	i = 0;
-	while (i < argc)
-	{
-		if (i >= 1)
-		{
-			splited = ft_split(argv[i], ' ');
-			while (*splited)
-			{
-				each_arg = ft_atoi(*splited);
-				insert_stack(stack_a, each_arg);
-				splited++;
-			}
-		}
-		i++;
-	}
-	stack_b->size = stack_a->size;
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (!new_node)
+		error_exit();
+	new_node->value = data;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	new_node->index = 0;
+	return (new_node);
+}
+
+t_node *last_node(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;	
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
 }

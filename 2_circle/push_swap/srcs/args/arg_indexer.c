@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   arg_indexer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 12:17:55 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/08 12:27:06 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 16:24:30 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	arg_indexer(t_stack *stack_a)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_node	*temp;
+	t_node	*temp_2;
 
-	arg_validator(argc, argv);
-	init_stacks(&stack_a, &stack_b);
-	arg_parser(argc, argv, &stack_a, &stack_b);
-	arg_indexer(&stack_a);
+	temp = stack_a->top;
+	while (temp)
+	{
+		temp_2 = stack_a->top;
+		while (temp_2)
+		{
+			if (temp->value > temp_2->value)
+				temp->index++;
+			temp_2 = temp_2->next;
+		}
+		temp = temp->next;
+	}
 }

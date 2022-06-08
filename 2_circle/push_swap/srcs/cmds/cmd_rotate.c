@@ -6,11 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:27:54 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/07 21:47:10 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 16:24:57 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_a(t_stack *stack_a, int is_print)
 {

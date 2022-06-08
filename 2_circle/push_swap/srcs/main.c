@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/04 21:48:13 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 12:32:50 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 16:23:01 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *new_node(int data)
+int	main(int argc, char **argv)
 {
-	t_node	*new_node;
+	t_stack	stack_a;
+	t_stack	stack_b;
 
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (!new_node)
-		error_exit();
-	new_node->value = data;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	new_node->index = 0;
-	return (new_node);
-}
-
-t_node *last_node(t_stack *stack)
-{
-	t_node	*node;
-
-	node = stack->top;	
-	while (node->next != NULL)
-		node = node->next;
-	return (node);
+	arg_validator(argc, argv);
+	init_stacks(&stack_a, &stack_b);
+	arg_parser(argc, argv, &stack_a, &stack_b);
+	arg_indexer(&stack_a);
+	arrange_2_args(&stack_a);
+	// arrange_3_args();
 }
