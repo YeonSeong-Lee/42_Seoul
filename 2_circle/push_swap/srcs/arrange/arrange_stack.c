@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   arrange_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 14:05:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 20:19:10 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/08 20:24:32 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/08 20:55:30 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	arrange_stack(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
-
-	arg_validator(argc, argv);
-	init_stacks(&stack_a, &stack_b);
-	arg_parser(argc, argv, &stack_a, &stack_b);
-	arg_indexer(&stack_a);
-	arrange_stack(&stack_a, &stack_b);
+	if (stack_a->size == 2)
+		arrange_2_args(stack_a);
+	else if (stack_a->size == 3)
+		arrange_3_args(stack_a);
 }

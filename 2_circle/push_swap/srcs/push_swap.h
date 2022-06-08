@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 19:10:41 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/08 20:26:35 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	rotate_both(t_stack *stack_a, t_stack *stack_b);
 void	rotate_reverse_a(t_stack *stack_a, int is_print);
 void	rotate_reverse_b(t_stack *stack_b, int is_print);
 void	rotate_reverse_both(t_stack *stack_a, t_stack *stack_b);
+void	arrange_stack(t_stack *stack_a, t_stack *stack_b);
 void	arrange_2_args(t_stack *stack_a);
 void	arrange_3_args(t_stack *stack_a);
 
