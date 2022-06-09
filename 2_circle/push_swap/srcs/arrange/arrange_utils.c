@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arrange_under_3_args.c                             :+:      :+:    :+:   */
+/*   arrange_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 16:16:36 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 20:19:31 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/06/09 19:48:12 by seongyle          #+#    #+#             */
+/*   Updated: 2022/06/09 19:48:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	arrange_2_args(t_stack *stack_a)
-{
-	if (stack_a->size != 2)
-		error_exit();
-	if (stack_a->top->index > stack_a->bottom->index)
-		swap_a(stack_a, 1);
-}
-
-static	int	identifty_case(t_stack *stack_a)
+int	identifty_case(t_stack *stack_a)
 {
 	t_node	*arg_1;
 	t_node	*arg_2;
@@ -40,29 +32,4 @@ static	int	identifty_case(t_stack *stack_a)
 	if (arg_1->index == 1 && arg_2->index == 2 && arg_3->index == 0)
 		return (5);
 	return (0);
-}
-
-void	arrange_3_args(t_stack *stack_a)
-{
-	int	case_num;
-
-	if (stack_a->size != 3)
-		error_exit();
-	case_num = identifty_case(stack_a);
-	if (case_num == 1)
-		swap_a(stack_a, 1);
-	else if (case_num == 2)
-	{
-		swap_a(stack_a, 1);
-		rotate_reverse_a(stack_a, 1);
-	}
-	else if (case_num == 3)
-		rotate_a(stack_a, 1);
-	else if (case_num == 4)
-	{
-		swap_a(stack_a, 1);
-		rotate_a(stack_a, 1);
-	}
-	else if (case_num == 5)
-		rotate_reverse_a(stack_a, 1);
 }
