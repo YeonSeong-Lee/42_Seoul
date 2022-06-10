@@ -21,15 +21,15 @@ int	identifty_case(t_stack *stack_a)
 	arg_1 = stack_a->top;
 	arg_2 = stack_a->top->next;
 	arg_3 = stack_a->bottom;
-	if (arg_1->index == 1 && arg_2->index == 0 && arg_3->index == 2)
+	if (arg_2->index < arg_1->index && arg_1->index < arg_3->index)
 		return (1);
-	if (arg_1->index == 2 && arg_2->index == 1 && arg_3->index == 0)
+	if (arg_3->index < arg_2->index && arg_2->index < arg_1->index)
 		return (2);
-	if (arg_1->index == 2 && arg_2->index == 0 && arg_3->index == 1)
+	if (arg_2->index < arg_3->index && arg_3->index < arg_1->index)
 		return (3);
-	if (arg_1->index == 0 && arg_2->index == 2 && arg_3->index == 1)
+	if (arg_1->index < arg_3->index && arg_3->index < arg_2->index)
 		return (4);
-	if (arg_1->index == 1 && arg_2->index == 2 && arg_3->index == 0)
+	if (arg_3->index < arg_1->index && arg_1->index < arg_2->index)
 		return (5);
 	return (0);
 }
