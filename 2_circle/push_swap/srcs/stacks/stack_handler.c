@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:21:25 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/09 21:07:20 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/11 20:39:08 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ t_node 	*pop(t_stack *stack)
 	if (stack->size == 0)
 		return (NULL);
 	ret_node = stack->top;
-	stack->top = stack->top->next;
+	if (stack->size >= 2)
+		stack->top = stack->top->next;
+	else
+		stack->top = NULL;
 	stack->size--;
 	return (ret_node);
 }
