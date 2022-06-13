@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:21:25 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/11 20:39:08 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/13 13:18:26 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ void	init_stacks(t_stack *stack_a, t_stack *stack_b)
 
 void	insert_stack(t_stack *stack_a, int data)
 {
+	t_node	*temp;
 	t_node	*node;
 
+	temp = stack_a->top;
 	node = new_node(data);
+	while (temp)
+	{
+		if (temp->value == node->value)
+			error_exit();
+		temp = temp->next;
+	}
 	if (stack_a->size == 0)
 		stack_a->top = node;
 	else
