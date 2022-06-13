@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:17 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 16:24:43 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/13 14:00:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,38 +35,27 @@ static int	int_checker(char *str)
 	return (0);
 }
 
-static int	duplicate_checker(char **str)
+static	int	white_space_checker(char *str)
 {
-	int	i;
-	int	j;
-	int	temp;
-	int	*arr;
+	int		i;
+	char	*temp;
 
 	i = 0;
-	arr = (int *)malloc(sizeof(int) * MAX_ARGS_SIZE);
-	if (!arr)
-		error_exit();
-	while (i <= MAX_ARGS_SIZE && *str)
+	temp = str;
+	while (*temp)
 	{
-		j = 0;
-		temp = ft_atoi(*str);
-		while (j < i)
-		{
-			if (arr[j] == temp)
-				error_exit();
-			j++;
-		}
-		arr[i] = temp;
-		i++;
-		str++;
+		if (*temp == ' ' || *temp == '\n' || *temp == '\r' || 
+		*temp == '\t'|| *temp == '\v' || *temp == '\f')
+			i++;
+		temp++;
 	}
-	free(arr);
+	if (i == ft_strlen(str))
+		error_exit();
 	return (1);
 }
-
 static	int	arg_checker(char *str)
 {
-	if (!digit_checker(str) || !int_checker(str))
+	if (!int_checker(str) || !digit_checker(str))
 		return (0);
 	return (1);
 }
@@ -77,13 +66,14 @@ void	arg_validator(int argc, char **argv)
 	char	**splited;
 	char	*each_arg;
 
-	if (argc < 1 || !duplicate_checker(argv))
+	if (argc < 1)
 		error_exit();
 	i = 0;
 	while (i < argc)
 	{
 		if (i >= 1)
 		{
+			white_space_checker(argv[i]);
 			splited = ft_split(argv[i], ' ');
 			while (*splited)
 			{
