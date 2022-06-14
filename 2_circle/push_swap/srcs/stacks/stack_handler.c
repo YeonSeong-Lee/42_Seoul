@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:21:25 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/13 13:18:26 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:15:33 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	push(t_stack *stack, t_node *node)
 	stack->size++;
 }
 
-t_node 	*pop(t_stack *stack)
+t_node	*pop(t_stack *stack)
 {
-	t_node *ret_node;
+	t_node	*ret_node;
 
 	if (stack->size == 0)
 		return (NULL);

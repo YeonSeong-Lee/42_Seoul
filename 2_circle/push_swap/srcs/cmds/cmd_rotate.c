@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 12:27:54 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/09 21:38:30 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:14:54 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rotate_a(t_stack *stack_a, int is_print)
 {
 	t_node	*temp;
 	t_node	*temp_next;
-	
+
 	if (stack_a->size <= 1)
 		return ;
 	temp = stack_a->top;
@@ -33,7 +33,7 @@ void	rotate_a(t_stack *stack_a, int is_print)
 void	rotate_b(t_stack *stack_b, int is_print)
 {
 	t_node	*temp_top;
-	
+
 	if (stack_b->size <= 1)
 		return ;
 	temp_top = stack_b->top;

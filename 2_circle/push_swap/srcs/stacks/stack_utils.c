@@ -6,13 +6,13 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 21:48:13 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/08 16:25:13 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:16:28 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node *new_node(int data)
+t_node	*new_node(int data)
 {
 	t_node	*new_node;
 
@@ -26,11 +26,11 @@ t_node *new_node(int data)
 	return (new_node);
 }
 
-t_node *last_node(t_stack *stack)
+t_node	*last_node(t_stack *stack)
 {
 	t_node	*node;
 
-	node = stack->top;	
+	node = stack->top;
 	while (node->next != NULL)
 		node = node->next;
 	return (node);

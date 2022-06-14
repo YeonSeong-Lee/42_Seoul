@@ -6,49 +6,57 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:49:06 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/11 20:48:23 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 20:52:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	int	get_smallest_index(t_stack *stack)
+static	int	get_max_bits(t_stack *stack_a)
 {
-	t_node	*temp;
-	int		i;
+	t_node		*temp;
+	size_t		max;
+	int			max_bits;
 
-	i = 0;
-	while (1)
+	temp = stack_a->top;
+	max = temp->index;
+	max_bits = 0;
+	while (temp)
 	{
-		temp = stack->top;
-		while (temp)
-		{
-			if (temp->index == i)
-				return (i);
-			temp = temp->next;
-		}
-		i++;
+		if (temp->index > max)
+			max = temp->index;
+		temp = temp->next;
 	}
-	return (-1);
-}
-
-static	void	move_smallest_a_to_b(t_stack *stack_a, t_stack *stack_b)
-{
-	int	i;
-
-	i = get_smallest_index(stack_a);
-	while (stack_a->top && i != -1)
-	{
-		if (stack_a->top->index == i)
-			return (push_b(stack_b, stack_a, 1));
-		rotate_a(stack_a, 1);
-	}
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
 }
 
 void	arrange_big_args(t_stack *stack_a, t_stack *stack_b)
 {
-	while (stack_a->size > 0)
-		move_smallest_a_to_b(stack_a, stack_b);
-	while (stack_b->size > 0)
-		push_a(stack_a, stack_b, 1);
+	t_node	*temp;
+	int		i;
+	int		j;
+	int		max_bits;
+	int		size;
+
+	i = 0;
+	temp = stack_a->top;
+	max_bits = get_max_bits(stack_a);
+	size = stack_a->size;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j++ < size)
+		{
+			temp = stack_a->top;
+			if (((temp->index >> i) & 1) == 1)
+				rotate_a(stack_a, 1);
+			else
+				push_b(stack_b, stack_a, 1);
+		}
+		while (stack_b->size > 0)
+			push_a(stack_a, stack_b, 1);
+		i++;
+	}
 }

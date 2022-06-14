@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:04:17 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/13 14:00:56 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:12:59 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ static int	int_checker(char *str)
 
 static	int	white_space_checker(char *str)
 {
-	int		i;
+	size_t	i;
 	char	*temp;
 
 	i = 0;
 	temp = str;
 	while (*temp)
 	{
-		if (*temp == ' ' || *temp == '\n' || *temp == '\r' || 
-		*temp == '\t'|| *temp == '\v' || *temp == '\f')
+		if (*temp == ' ' || *temp == '\n' || *temp == '\r'
+			|| *temp == '\t' || *temp == '\v' || *temp == '\f')
 			i++;
 		temp++;
 	}
@@ -53,6 +53,7 @@ static	int	white_space_checker(char *str)
 		error_exit();
 	return (1);
 }
+
 static	int	arg_checker(char *str)
 {
 	if (!int_checker(str) || !digit_checker(str))
@@ -62,7 +63,7 @@ static	int	arg_checker(char *str)
 
 void	arg_validator(int argc, char **argv)
 {
-	size_t	i;
+	int		i;
 	char	**splited;
 	char	*each_arg;
 

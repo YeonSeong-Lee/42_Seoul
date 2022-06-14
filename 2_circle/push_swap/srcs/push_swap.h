@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/09 19:53:39 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:07:50 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,17 @@ typedef struct s_stack
 	t_node	*bottom;
 }	t_stack;
 
+typedef struct s_chunk
+{
+	size_t	min_index;
+	size_t	max_index;
+}	t_chunk;
+
 void	arg_validator(int argc, char **argv);
 void	error_exit(void);
 void	init_stacks(t_stack *stack_a, t_stack *stack_b);
 void	insert_stack(t_stack *stack_a, int data);
-void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b);
+void	arg_parser(int argc, char **argv, t_stack *stack_a);
 void	arg_indexer(t_stack *stack_a);
 t_node	*new_node(int data);
 t_node	*last_node(t_stack *stack);
@@ -58,5 +64,7 @@ void	arrange_stack(t_stack *stack_a, t_stack *stack_b);
 int		identifty_case(t_stack *stack_a);
 void	arrange_under_5_args(t_stack *stack_a, t_stack *stack_b);
 void	arrange_big_args(t_stack *stack_a, t_stack *stack_b);
+int		get_location_chunk_top(t_stack *stack, t_chunk *chunk);	
+int		get_location_chunk_bottom(t_stack *stack, t_chunk *chunk);
 
 #endif

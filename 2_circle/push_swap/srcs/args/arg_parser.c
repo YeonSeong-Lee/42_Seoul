@@ -6,13 +6,13 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:20:44 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/11 20:45:31 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 20:50:15 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	arg_parser(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
+void	arg_parser(int argc, char **argv, t_stack *stack_a)
 {
 	int		i;
 	char	**splited;

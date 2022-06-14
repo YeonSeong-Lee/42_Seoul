@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:16:36 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/09 20:24:21 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/14 21:13:59 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	arrange_3_args(t_stack *stack_a)
 		rotate_reverse_a(stack_a, 1);
 }
 
-static	void arrange_4_args(t_stack *stack_a, t_stack *stack_b)
+static	void	arrange_4_args(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size != 4)
 		error_exit();
@@ -62,7 +62,7 @@ static	void arrange_4_args(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-static	void arrange_5_args(t_stack *stack_a, t_stack *stack_b)
+static	void	arrange_5_args(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size != 5)
 		error_exit();
