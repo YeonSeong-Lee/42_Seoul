@@ -13,8 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define MAX_ARGS_SIZE 500
-
 # include <unistd.h>
 # include "../lib/libft.h"
 
@@ -64,7 +62,5 @@ void	arrange_stack(t_stack *stack_a, t_stack *stack_b);
 int		identifty_case(t_stack *stack_a);
 void	arrange_under_5_args(t_stack *stack_a, t_stack *stack_b);
 void	arrange_big_args(t_stack *stack_a, t_stack *stack_b);
-int		get_location_chunk_top(t_stack *stack, t_chunk *chunk);	
-int		get_location_chunk_bottom(t_stack *stack, t_chunk *chunk);
 
 #endif
