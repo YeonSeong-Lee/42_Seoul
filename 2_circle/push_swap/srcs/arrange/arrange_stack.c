@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 20:24:32 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/26 14:51:11 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/26 14:52:31 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	is_arranged(t_stack *stack_a)
 
 void	arrange_stack(t_stack *stack_a, t_stack *stack_b)
 {
-	if (is_arranged)
+	if (is_arranged(stack_a))
 		return ;
 	if (stack_a->size <= 5)
 		return (arrange_under_5_args(stack_a, stack_b));
