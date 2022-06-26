@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:09:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/14 21:07:50 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/06/26 14:53:23 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ typedef struct s_stack
 	t_node	*top;
 	t_node	*bottom;
 }	t_stack;
-
-typedef struct s_chunk
-{
-	size_t	min_index;
-	size_t	max_index;
-}	t_chunk;
 
 void	arg_validator(int argc, char **argv);
 void	error_exit(void);
