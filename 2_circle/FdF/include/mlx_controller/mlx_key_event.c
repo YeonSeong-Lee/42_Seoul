@@ -6,17 +6,17 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 16:27:21 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 17:21:35 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 17:55:18 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_controller.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int	key_press(int keycode)
+int		key_press(int keycode, void *param)
 {
-	printf("KEY PRESS : %d\n", keycode);
 	if (keycode == KEY_ESC)
 		exit(EXIT_SUCCESS);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 16:29:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 17:20:11 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 17:52:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ typedef struct s_data
 }	t_data;
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int		key_press(int keycode);
+int		key_press(int keycode, void *param);
 
 #endif
