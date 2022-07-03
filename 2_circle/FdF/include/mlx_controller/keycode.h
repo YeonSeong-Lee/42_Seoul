@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_controller.h                                   :+:      :+:    :+:   */
+/*   keycode.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 16:29:29 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 17:20:11 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/07/03 16:44:31 by seongyle          #+#    #+#             */
+/*   Updated: 2022/07/03 17:21:03 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_CONTROLLER_H
-# define MLX_CONTROLLER_H
+#ifndef KEYCODE_H
+# define KEYCODE_H
 
-# include "keycode.h"
+enum e_keycode {
+	KEY_ESC = 53,
+	KEY_W = 13,
+	KEY_A = 0,
+	KEY_S = 1,
+	KEY_D = 2,
+};
 
-typedef struct s_data
-{
-	void	*img;
-	void	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
+enum e_keymask {
+	X_EVENT_KEY_PRESS = 2,
+	X_EVENT_KEY_release = 3,
+	X_EVENT_KEY_EXIT = 17,
+};
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int		key_press(int keycode);
-
-#endif
+# endif

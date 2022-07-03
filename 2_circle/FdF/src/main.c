@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 16:26:36 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 17:19:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	main(void)
 		i++;
 	}
 	mlx_put_image_to_window(mlx, win, img.img, 0, 0);
+	mlx_hook(win, 02, X_EVENT_KEY_PRESS, &key_press,(void*)(0));
 	mlx_loop(mlx);
 }
