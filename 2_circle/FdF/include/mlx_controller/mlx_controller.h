@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   mlx_controller.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 15:18:57 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 16:38:27 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/07/03 16:29:29 by seongyle          #+#    #+#             */
+/*   Updated: 2022/07/03 16:37:51 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#ifndef MLX_CONTROLLER_H
+# define MLX_CONTROLLER_H
 
-enum e_color {
-	RED = 0x00FF0000,
-	GREEN = 0x0000FF00,
-	BLUE = 0x000000FF,
-	WHITE = 0x00FFFFFF,
-	BROWN = 0x00A52A2A,
-	BLACK = 0x00000000,
-};
+typedef struct s_data
+{
+	void	*img;
+	void	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
+
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 #endif

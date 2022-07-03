@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 16:00:41 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 16:26:36 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	j = 0;
 	size = 1000;
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, size, size, "gradients window");
+	win = mlx_new_window(mlx, size, size, "key_event");
 	img.img = mlx_new_image(mlx, size, size);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	while (i < size)
@@ -34,7 +34,7 @@ int	main(void)
 		j = 0;
 		while (j < size)
 		{
-			my_mlx_pixel_put(&img, i, j, WHITE - (i + j));
+			my_mlx_pixel_put(&img, i, j, WHITE);
 			j++;
 		}
 		i++;

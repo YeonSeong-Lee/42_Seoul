@@ -6,11 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 14:15:09 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 14:25:12 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 16:36:06 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "mlx_controller.h"
 
 static int	offset(int x, int y, int line_length, int bits_per_pixel)
 {

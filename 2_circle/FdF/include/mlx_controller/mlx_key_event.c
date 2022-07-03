@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   mlx_key_event.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 15:18:57 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 16:38:27 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/07/03 16:27:21 by seongyle          #+#    #+#             */
+/*   Updated: 2022/07/03 16:38:20 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#include "mlx_controller.h"
 
-enum e_color {
-	RED = 0x00FF0000,
-	GREEN = 0x0000FF00,
-	BLUE = 0x000000FF,
-	WHITE = 0x00FFFFFF,
-	BROWN = 0x00A52A2A,
-	BLACK = 0x00000000,
-};
 
-#endif
+
