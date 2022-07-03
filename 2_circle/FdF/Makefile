@@ -1,3 +1,3 @@
 all:
-	cc -Lmlx -lmlx -framework OpenGL -framework AppKit srcs/main.c
+	cc -Linclude -lmlx -framework OpenGL -framework AppKit src/main.c include/my_mlx.c
 	./a.out

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/06/28 21:57:33 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/07/03 13:13:36 by seongyle          #+#    #+#             */
+/*   Updated: 2022/07/03 14:21:08 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*mlx_init();
-void	*mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
-void	mlx_loop(void *mlx_ptr);
+#ifndef	FDF_H
+# define FDF_H
+#include "./lib/mlx/mlx.h"
 
-int	main(void)
+typedef struct s_data
 {
-	void	*mlx;
-	void	*win;
+	void	*img;
+	void	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
 
-	mlx = mlx_init();
-	win = mlx_new_window(mlx, 1000, 1000, "first_window");
-	mlx_loop(mlx);
-}
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+
+#endif
