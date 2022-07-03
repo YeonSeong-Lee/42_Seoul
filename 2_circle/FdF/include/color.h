@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 15:18:57 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/03 15:30:47 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/03 15:42:55 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # define BLUE 0x000000FF
 # define WHITE 0x00FFFFFF
 # define BROWN 0x00A52A2A
+# define BLACK 0x00000000
 
 #endif
