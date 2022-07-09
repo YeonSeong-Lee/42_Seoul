@@ -1,2 +1,2 @@
 all:
-	cc -Linclude -lmlx -framework OpenGL -framework AppKit src/main.c include/*/*.c
+	cc -Linclude/lib -lmlx -lgnl -framework OpenGL -framework AppKit src/main.c include/* /*.c

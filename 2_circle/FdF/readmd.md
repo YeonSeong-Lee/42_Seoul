@@ -16,3 +16,4 @@
 
 - [mlx example](https://github.com/terry-yes/mlx_example)
 - [mlx guide](https://harm-smits.github.io/42docs/libs/minilibx)
+- [그래픽 참고자료](https://intrepidgeeks.com/tutorial/fdf-graphics)
