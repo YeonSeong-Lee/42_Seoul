@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:54:18 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/04/01 21:04:40 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/04 12:12:30 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
-#include <stdio.h> // must delete
-#include <unistd.h> // must delete
+#include "libft.h"
 
-int	main(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	paser(fd);
+	if (!lst || !del)
+		return ;
+	del(lst -> content);
+	free(lst);
 }

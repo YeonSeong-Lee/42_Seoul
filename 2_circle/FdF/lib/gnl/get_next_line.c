@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 20:48:37 by seongyle          #+#    #+#             */
-/*   Updated: 2022/04/23 22:03:02 by seongyle         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:48:25 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static	t_list	*get_node(t_list *head, int fd)
+static	t_gnl_list	*get_node(t_gnl_list *head, int fd)
 {
-	t_list	*node;
+	t_gnl_list	*node;
 
 	node = head->next;
 	while (node)
@@ -23,7 +23,7 @@ static	t_list	*get_node(t_list *head, int fd)
 			return (node);
 		node = node->next;
 	}
-	node = malloc(sizeof(t_list));
+	node = malloc(sizeof(t_gnl_list));
 	if (!node)
 		return (NULL);
 	node->fd = fd;
@@ -94,8 +94,8 @@ static char	*set_remains(char **save, size_t offset)
 
 char	*get_next_line(int fd)
 {
-	static t_list	head;
-	t_list			*node;
+	static t_gnl_list	head;
+	t_gnl_list			*node;
 	char			*line;
 
 	if (fd < 0 || BUFFER_SIZE < 1)

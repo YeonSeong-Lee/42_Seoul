@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:54:18 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/03/22 18:39:58 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/10 15:22:59 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
-#include <stdio.h> // must delete
-#include <unistd.h> // must delete
+#include <stdlib.h>
 
-int	main(void)
+void	*ft_memset(void *s, int c, size_t n);
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	paser(fd);
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, count * size);
+	return (ptr);
 }

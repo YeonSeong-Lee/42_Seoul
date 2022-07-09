@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:54:18 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/03/14 18:43:01 by seongyle          #+#    #+#             */
+/*   Updated: 2022/03/14 18:46:40 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
-#include <stdio.h> // must delete
-#include <unistd.h> // must delete
-
-int	main(void)
+int	ft_isprint(int c)
 {
-	paser(fd);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }

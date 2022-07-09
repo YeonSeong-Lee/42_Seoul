@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:54:18 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/04/01 13:07:10 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/01 13:29:03 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
-#include <stdio.h> // must delete
-#include <unistd.h> // must delete
+#include "libft.h"
 
-int	main(void)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	paser(fd);
+	if (!lst || !new)
+		return ;
+	new -> next = *lst;
+	*lst = new;
 }

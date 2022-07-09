@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 21:32:02 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:54:18 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/04/01 15:31:28 by seongyle          #+#    #+#             */
+/*   Updated: 2022/04/01 20:02:52 by seongyle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
-#include <stdio.h> // must delete
-#include <unistd.h> // must delete
+#include "libft.h"
 
-int	main(void)
+t_list	*ft_lstlast(t_list *lst)
 {
-	paser(fd);
+	if (!lst)
+		return (NULL);
+	while ((lst -> next) != NULL)
+		lst = lst -> next;
+	return (lst);
 }

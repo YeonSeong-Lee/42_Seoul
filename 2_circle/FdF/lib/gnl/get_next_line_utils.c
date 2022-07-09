@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seongyle <seongyle@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:34:15 by seongyle          #+#    #+#             */
-/*   Updated: 2022/04/23 22:05:06 by seongyle         ###   ########.fr       */
+/*   Updated: 2022/07/10 01:48:19 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	*delete_node(t_list **node)
+void	*delete_node(t_gnl_list **node)
 {
 	free((*node)->save);
 	(*node)->prev->next = (*node)->next;
