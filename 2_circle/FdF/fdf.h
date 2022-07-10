@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:13:36 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 01:40:41 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/10 21:10:39 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # include "libft.h"
 # include "color.h"
 
+char	**read_map(void);
 
 #endif
