@@ -17,3 +17,5 @@
 - [mlx example](https://github.com/terry-yes/mlx_example)
 - [mlx guide](https://harm-smits.github.io/42docs/libs/minilibx)
 - [그래픽 참고자료](https://intrepidgeeks.com/tutorial/fdf-graphics)
+- [2차원 배열](https://codeng.tistory.com/8)
+- [참고자료](https://github.com/24siefil/ecole42-42cursus/tree/main/02-FdF)

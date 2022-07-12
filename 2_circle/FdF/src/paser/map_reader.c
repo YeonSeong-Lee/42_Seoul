@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:54:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/10 22:06:11 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/12 20:29:52 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,28 @@ char	**map_reader(char *path)
 	int 	fd;
 	char	*temp;
 	char	**map;
+	char	**map_ptr;
 	
-	map = (char**)malloc(1000000);
+	int height = 11;
+	int	width = 50;
+
+	map = (char**)malloc(sizeof(char) * height);
+	map[0] = (char *)malloc(sizeof(char) * width * height);
+
+	int	i = 0;
+	while (i < height)
+	{
+		map[i] = map[i - 1] + width;
+		i++;
+	}
+	map_ptr = map;
 	fd = open_map(path);
+
+	i = 0;
 	while (temp = get_next_line(fd))
 	{
-		*map = temp;
-		map++;
+		map[i] = temp;
+		i++;
 	}
 	return (map);
-	//원래 할당되었던 map의 주소를 반환해야함.
 }

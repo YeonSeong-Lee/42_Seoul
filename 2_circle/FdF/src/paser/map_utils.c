@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 13:13:36 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/12 20:38:40 by seongyle         ###   ########seoul.kr  */
+/*   Created: 2022/07/12 20:42:38 by seongyle          #+#    #+#             */
+/*   Updated: 2022/07/12 21:56:55 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FDF_H
-# define FDF_H
-# include "mlx.h"
-# include "get_next_line.h"
-# include "mlx_controller.h"
-# include "libft.h"
-# include "color.h"
+#include "../fdf.h"
 
-typedef struct s_map
+static get_height(t_map *map, int fd)
 {
-	int	width;
-	int	height;
-}	t_map;
+	char	*temp;	
+	int		height;
 
-char	**map_reader(char *path);
+	height = 0;
+	while (temp = get_next_line(fd))
+		height++;
+}
 
+static	get_width(t_map *map, int fd)
+{
+	
+}
 
-#endif
+void	set_map_size(t_map *map, int fd);
+{
+	map->height = get_height(fd);	
+	map->width = get_width(fd);
+}
