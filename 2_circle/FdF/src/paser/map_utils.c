@@ -6,29 +6,56 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 20:42:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/12 21:56:55 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/13 15:53:52 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
 #include "../fdf.h"
 
-static get_height(t_map *map, int fd)
+size_t	get_height(char *path)
 {
 	char	*temp;	
-	int		height;
-
+	size_t	height;
+	int		fd;
+	
 	height = 0;
+	fd = open_map(path);
 	while (temp = get_next_line(fd))
 		height++;
+	close(fd);
+	return (height);
 }
 
-static	get_width(t_map *map, int fd)
+size_t	get_width(char *path)
 {
+	char	*temp;
+	char	**temp_splited;
+	size_t	i;
+	int		fd;
+
+	fd = open_map(path);
+	temp = get_next_line(fd);
+	i = 0;
+	temp_splited = ft_split(temp, ' ');
+	while (*temp_splited)
+	{
+		i++;
+		temp_splited++;
+	}
+	close(fd);
+	return (i);			
+}
+
+int	open_map(char *path)
+{
+	int		fd;
 	
-}
-
-void	set_map_size(t_map *map, int fd);
-{
-	map->height = get_height(fd);	
-	map->width = get_width(fd);
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+	{
+		write(2, "error can not open\n", 18);
+		// error일 때 따로 처리해야함.
+	}
+	return (fd);
 }
