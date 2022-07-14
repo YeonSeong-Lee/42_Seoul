@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:13:36 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/13 16:10:48 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 21:59:46 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_map
 {
 	int	width;
 	int	height;
+	int **map;
 }	t_map;
 
 int		**map_reader(char *path);
