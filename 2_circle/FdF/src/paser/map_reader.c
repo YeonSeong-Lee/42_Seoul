@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:54:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/14 21:53:38 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 21:53:56 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static	void set_map(int **map, char *path, size_t height, size_t width)
 	size_t	j;
 	char	**splited;
 	char	*temp;
-	int		temp_int;
 
 	fd = open_map(path);
 	i = 0;
