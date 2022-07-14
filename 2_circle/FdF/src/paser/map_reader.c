@@ -6,12 +6,11 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:54:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/14 21:49:18 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 21:53:38 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
-#include <stdio.h> // 
 
 static	void set_map(int **map, char *path, size_t height, size_t width)
 {
@@ -31,11 +30,9 @@ static	void set_map(int **map, char *path, size_t height, size_t width)
 		j = 0;
 		while (j < width)
 		{
-			printf("%d ", ft_atoi(splited[j]));
 			map[i][j] = ft_atoi(splited[j]);
 			j++;
 		}
-		printf("\n");
 		i++;
 	}
 	close(fd);
