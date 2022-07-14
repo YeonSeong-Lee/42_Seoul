@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 20:42:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/13 15:53:52 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/14 20:54:04 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ size_t	get_height(char *path)
 	
 	height = 0;
 	fd = open_map(path);
-	while (temp = get_next_line(fd))
+	temp = get_next_line(fd);
+	while (temp)
+	{
+		temp = get_next_line(fd);
 		height++;
+	}
 	close(fd);
 	return (height);
 }
