@@ -6,13 +6,13 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:54:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/14 22:00:14 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/15 19:06:07 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdf.h"
 
-static	void set_map(int **map, char *path, size_t height, size_t width)
+static	void set_map(t_map *map_info, char *path, size_t height, size_t width)
 {
 	int		fd;
 	size_t	i;
@@ -29,32 +29,33 @@ static	void set_map(int **map, char *path, size_t height, size_t width)
 		j = 0;
 		while (j < width)
 		{
-			map[i][j] = ft_atoi(splited[j]);
+			(map_info->map)[i][j] = ft_atoi(splited[j]);
 			j++;
 		}
 		i++;
 	}
 	close(fd);
+	map_info->height = height;
+	map_info->width = width;
 }
 
-int	**map_reader(char *path)
+t_map	*map_reader(t_map *map_info, char *path)
 {
 	int 	fd;
-	int		**map;
 	size_t	height;
 	size_t	width;
 	size_t	i;
 
 	height = get_height(path);
 	width = get_width(path);
-	map = (int**)malloc(sizeof(int *) * height);
-	map[0] = (int *)malloc(sizeof(int) * width * height);
+	map_info->map = (int**)malloc(sizeof(int *) * height);
+	(map_info->map)[0] = (int *)malloc(sizeof(int) * width * height);
 	i = 1;
 	while (i < height)
 	{
-		map[i] = map[i - 1] + width;
+		(map_info->map)[i] = (map_info->map)[i - 1] + width;
 		i++;
 	}
-	set_map(map, path, height, width);
-	return (map);
+	set_map(map_info, path, height, width);
+	return (map_info);
 }
