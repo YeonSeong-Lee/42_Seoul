@@ -13,7 +13,7 @@
 #include "../fdf.h"
 #include <stdio.h> //
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_map	*map_info;
 	void	*mlx;
@@ -22,7 +22,12 @@ int	main(void)
 	int		i;
 	int		j;
 	int		weight;
+	char	*path;
 
+	if (argc != 2)
+		exit(EXIT_FAILURE);
+
+	path = file_path(argv[1]);
 	map_info = (t_map *)malloc(sizeof(t_map));
 	map_info = map_reader(map_info, "./maps/42.fdf");
 	i = 0;

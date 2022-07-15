@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 20:42:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/14 20:54:04 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/15 22:04:04 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ int	open_map(char *path)
 		// error일 때 따로 처리해야함.
 	}
 	return (fd);
+}
+
+char	*file_path(char *file_name)
+{
+	char	*temp;
+
+	temp = ft_strjoin("./maps/", file_name);
+	return (temp);
 }
