@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 01:54:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/15 19:06:07 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/15 21:02:30 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,12 @@ t_map	*map_reader(t_map *map_info, char *path)
 
 	height = get_height(path);
 	width = get_width(path);
-	map_info->map = (int**)malloc(sizeof(int *) * height);
+	(map_info->map) = (int **)malloc(sizeof(int *) * height);
+	if (!map_info->map)
+		exit(EXIT_FAILURE);
 	(map_info->map)[0] = (int *)malloc(sizeof(int) * width * height);
+	if (!map_info->map[0])
+		exit(EXIT_FAILURE);
 	i = 1;
 	while (i < height)
 	{
