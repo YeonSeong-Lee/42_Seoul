@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	int		j;
 	int		weight;
 	char	*path;
+	int		size;
 
 	if (argc != 2)
 		exit(EXIT_FAILURE);
@@ -30,12 +31,12 @@ int	main(int argc, char **argv)
 	path = file_path(argv[1]);
 	map_info = (t_map *)malloc(sizeof(t_map));
 	map_info = map_reader(map_info, "./maps/42.fdf");
+	size = 1000;
 	i = 0;
 	j = 0;
-	weight = 4;
 	mlx = mlx_init();
-	win = mlx_new_window(mlx, (map_info->height) * weight, (map_info->width) * weight, "map color practice");
-	img.img = mlx_new_image(mlx, map_info->height * weight, map_info->width);
+	win = mlx_new_window(mlx, size, size, "map color practice");
+	img.img = mlx_new_image(mlx, size , size);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
 	while (i < (map_info->height))
@@ -43,12 +44,12 @@ int	main(int argc, char **argv)
 		j = 0;
 		while (j < (map_info->width))
 		{
-			if (map_info->map[i][j] >= 3)
-				my_mlx_pixel_put(&img, j, i, BLUE);
-			else if (map_info->map[i][j] >= -1)
-				my_mlx_pixel_put(&img, j, i, BROWN);
+			if ((map_info->coordinate[i][j]).z >= 3)
+				my_mlx_pixel_put(&img, (map_info->coordinate[i][j]).x, (map_info->coordinate[i][j]).y, BLUE);
+			else if ((map_info->coordinate[i][j]).z >= -1)
+				my_mlx_pixel_put(&img, (map_info->coordinate[i][j]).x, (map_info->coordinate[i][j]).y, BROWN);
 			else
-				my_mlx_pixel_put(&img, j, i, GREEN);
+				my_mlx_pixel_put(&img, (map_info->coordinate[i][j]).x, (map_info->coordinate[i][j]).y, WHITE);
 			j++;
 		}
 		i++;

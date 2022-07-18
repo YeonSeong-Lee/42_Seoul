@@ -6,7 +6,7 @@
 /*   By: seongyle <seongyle@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 20:42:38 by seongyle          #+#    #+#             */
-/*   Updated: 2022/07/15 22:04:04 by seongyle         ###   ########seoul.kr  */
+/*   Updated: 2022/07/18 21:48:54 by seongyle         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,12 @@ char	*file_path(char *file_name)
 
 	temp = ft_strjoin("./maps/", file_name);
 	return (temp);
+}
+
+size_t get_gap_between_dots(t_map *map_info)
+{
+	size_t	gap;
+
+	gap = 35;
+	return (gap);
 }
